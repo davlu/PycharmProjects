@@ -1,0 +1,20 @@
+import random
+print('I am thinking of a number between 1 and 20. guess.')
+guess = input()
+count = 0
+number = random.randint(1,20)
+while guess!=number:
+    try:
+        guess = int(guess)
+        count+=1
+        if guess > number:
+            print('too high.guess again!')
+            guess = input()
+        elif guess < number:
+            print('too low. guess again!')
+            guess = input()
+    except ValueError:
+        print('print a NUMBER. guess again: ')
+        guess= input()
+        count+=1
+print('it took you ' +str(count)+' guesses')
